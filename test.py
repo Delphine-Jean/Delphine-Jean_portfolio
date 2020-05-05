@@ -1,1 +1,4 @@
-#Fichier Pyp
+#Fichier Pypdir
+
+
+var7 = 10
