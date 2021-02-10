@@ -32,11 +32,31 @@ def del_unwanted_cols(data):
     del data['conseil_discpline']
     return data
 
+# Create and set your PipelineOptions.
+# For Cloud execution, specify DataflowRunner and set the Cloud Platform
+# project, job name, temporary files location, and region.
+# For more information about regions, check:
+# https://cloud.google.com/dataflow/docs/concepts/regional-endpoints
+options = PipelineOptions(
+    flags=argv,
+    runner='DataflowRunner',
+    project='projet-delphine',
+    job_name='pipeline',
+    temp_location='gs://projet-delphine/temp',
+    region='us-east1-c
+    
+    
+    ')
+
+# Create the Pipeline with the specified options.
+# with beam.Pipeline(options=options) as pipeline:
+#   pass  # build your pipeline here.
+
 """### On met en place notre pipeline"""
 
 # On instancie notre pipeline dans une variable
 
-p1 = beam.Pipeline(options=PipelineOptions())
+p1 = beam.Pipeline(options=options)
 
 # On crée notre Pipeline
 
@@ -58,5 +78,5 @@ attendance_count =   (
 
 """
 
-result = p.run()
+result = p1.run()
 result.wait_until_finish()
