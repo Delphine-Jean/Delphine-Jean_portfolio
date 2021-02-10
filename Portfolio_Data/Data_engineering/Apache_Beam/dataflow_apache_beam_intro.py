@@ -43,7 +43,7 @@ options = PipelineOptions(
     project='projet-delphine',
     job_name='pipeline',
     temp_location='gs://projet-delphine/temp',
-    region='us-east1-c
+    region='us-east1-c'
     
     
     ')
