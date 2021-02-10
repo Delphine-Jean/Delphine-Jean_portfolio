@@ -44,9 +44,7 @@ options = PipelineOptions(
     job_name='pipeline',
     temp_location='gs://projet-delphine/temp',
     region='us-east1-c'
-    
-    
-    ')
+    )
 
 # Create the Pipeline with the specified options.
 # with beam.Pipeline(options=options) as pipeline:
