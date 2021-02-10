@@ -36,7 +36,7 @@ def del_unwanted_cols(data):
 
 # On instancie notre pipeline dans une variable
 
-p1 = beam.Pipeline(options=PipelineOptions)
+p1 = beam.Pipeline(options=PipelineOptions())
 
 # On crée notre Pipeline
 
