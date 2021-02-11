@@ -20,6 +20,6 @@ pipeline_test =   (
                           | 'Ecriture des données' >> beam.io.WriteToText('gs://projet-delphine/df-pipeline-1/sanctionspolice_output.csv')
                             
 
-result = p.run()
-result.wait_until_finish()
+p.run()
+
 
