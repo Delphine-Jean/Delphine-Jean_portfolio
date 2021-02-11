@@ -76,5 +76,3 @@ attendance_count =   (
 
 """
 
-result = p1.run()
-result.wait_until_finish()
