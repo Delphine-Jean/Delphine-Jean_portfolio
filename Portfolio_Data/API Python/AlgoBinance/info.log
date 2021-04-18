@@ -1,0 +1,38 @@
+2021-04-13 22:20:41,932 INFO :: message for basic informations
+2021-04-13 22:20:41,932 WARNING :: message to pay attention
+2021-04-13 22:20:41,932 ERROR :: message helps to debug an error
+2021-04-13 22:20:41,932 INFO :: message
+2021-04-13 22:31:39,888 INFO :: message for basic informations
+2021-04-13 22:31:39,889 WARNING :: message to pay attention
+2021-04-13 22:31:39,889 ERROR :: message helps to debug an error
+2021-04-18 21:37:24,107 INFO :: message for basic informations
+2021-04-18 21:37:24,107 WARNING :: message to pay attention
+2021-04-18 21:37:24,112 ERROR :: message helps to debug an error
+2021-04-18 21:45:01,265 INFO :: message for basic informations
+2021-04-18 21:45:01,265 WARNING :: message to pay attention
+2021-04-18 21:45:01,265 ERROR :: message helps to debug an error
+2021-04-18 21:45:22,983 INFO :: message for basic informations
+2021-04-18 21:45:22,983 WARNING :: message to pay attention
+2021-04-18 21:45:22,983 ERROR :: message helps to debug an error
+2021-04-18 21:46:34,853 INFO :: message for basic informations
+2021-04-18 21:46:34,853 WARNING :: message to pay attention
+2021-04-18 21:46:34,853 ERROR :: message helps to debug an error
+2021-04-18 21:47:12,819 INFO :: message for basic informations
+2021-04-18 21:47:12,819 WARNING :: message to pay attention
+2021-04-18 21:47:12,819 ERROR :: message helps to debug an error
+2021-04-18 21:55:27,782 INFO :: message for basic informations
+2021-04-18 21:55:27,784 WARNING :: message to pay attention
+2021-04-18 21:55:27,786 ERROR :: message helps to debug an error
+2021-04-18 21:56:51,257 INFO :: message for basic informations
+2021-04-18 21:56:51,259 WARNING :: message to pay attention
+2021-04-18 21:56:51,260 ERROR :: message helps to debug an error
+2021-04-18 21:57:40,357 INFO :: message for basic informations
+2021-04-18 21:57:40,357 WARNING :: message to pay attention
+2021-04-18 21:57:40,357 ERROR :: message helps to debug an error
+2021-04-18 21:58:07,751 INFO :: message for basic informations
+2021-04-18 21:58:07,751 WARNING :: message to pay attention
+2021-04-18 21:58:07,751 ERROR :: message helps to debug an error
+2021-04-18 21:58:08,607 ERROR :: Error while making GET request to /fapi/v1/klines: {'code': -1120, 'msg': 'Invalid interval.'} (error code 400)
+2021-04-18 21:59:14,886 INFO :: message for basic informations
+2021-04-18 21:59:14,886 WARNING :: message to pay attention
+2021-04-18 21:59:14,886 ERROR :: message helps to debug an error
