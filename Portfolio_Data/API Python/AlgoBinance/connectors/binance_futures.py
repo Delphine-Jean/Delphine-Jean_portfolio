@@ -2,26 +2,43 @@ import logging
 import time
 import requests
 
+from urllib.parse import urlencode
+import hmac
+import hashlib
+
+import websocket
+
 logger = logging.getLogger()
 
 class BinanceClientFutures:
     def __init__(self, public_key, secret_key, testnet : bool):
         if testnet:
             self.base_url = "https://testnet.binancefuture.com"
+            self.wss_url = "wss://stream.binancefutures.com/ws"
         else:
             self.base_url = "https://fapi.binance.com"
+            self.wss_url = "wss://stream.binance.com/ws"
 
         self.prices = {}
         self.public_key = public_key
         self.secret_key = secret_key
 
-        self.headers = { "X-MBX-API": self.public_key}
+        self.headers = {"X-MBX-APIKEY": self.public_key}
+
+        logger.info("Binance Futures Client successfully initialized")
+
+    def generate_signature(self, data):
+        return hmac.new(self.secret_key.encode(), urlencode(data).encode(), hashlib.sha256).hexdigest()
 
 
 
     def make_request(self, method, endpoint, data):
         if method == 'GET':
-            response = requests.get(self.base_url + endpoint, params=data, headers= self.headers)
+            response = requests.get(self.base_url + endpoint, params=data, headers=self.headers)
+        elif method == "POST":
+            response = requests.post(self.base_url + endpoint, params=data, headers=self.headers)
+        elif method == "DELETE":
+            response = requests.delete(self.base_url + endpoint, params=data, headers=self.headers)
         else:
             raise ValueError()
         if response.status_code == 200:
@@ -71,12 +88,73 @@ class BinanceClientFutures:
 
     def get_balance(self):
         data = dict()
-        data["timestamps"] = int(time.time() * 1000)
-        account_data = self.ma
-    def place_order(self):
-        pass
+        data["timestamp"] = int(time.time() * 1000)
+        data["signature"] = self.generate_signature(data)
 
-    def cancel_order(self):
-        pass
-    def get_order_status(self):
-        pass
+        balances = dict()
+        account_data = self.make_request("GET", "/fapi/v1/account", data)
+
+        if account_data is not None:
+            for a in account_data['assets']:
+                balances[a['asset']] = a
+        return balances
+
+
+    def place_order(self, symbol, side, quantity,order_type, price=None, tif=None):
+        data = dict()
+        data["symbol"] = symbol
+        data["side"] = side
+        data["quantity"] = quantity
+        data["type"] = order_type
+
+
+        if price is not None:
+            data["price"] = price
+
+        if tif is not None:
+            data['timeInForce'] = tif
+        data["timestamp"] = int(time.time() * 1000)
+        data["signature"] = self.generate_signature(data)
+
+        order_status = self.make_request("POST","/fapi/v1/order", data)
+
+        return order_status
+
+    def cancel_order(self, symbol, orderId):
+        data = dict()
+        data["symbol"] = symbol
+        data["orderId"] = orderId
+        data["timestamp"] = int(time.time() * 1000)
+        data["signature"] = self.generate_signature(data)
+
+        order_status = self.make_request("DELETE", "/fapi/v1/order", data)
+
+        return order_status
+
+    def get_order_status(self, symbol, order_id):
+        data = dict()
+        data["symbol"] = symbol
+        data["orderId"] = order_id
+        data["timestamp"] = int(time.time() * 1000)
+        data["signature"] = self.generate_signature(data)
+
+        order_status = self.make_request("GET", "/fapi/v1/order", data)
+
+        return order_status
+
+    def start_ws(self):
+        ws = websocket.WebSocketApp(self.wss_url, on_open=self.on_open,on_close=self.on_close,on_error=self.on_error, on_message = self.on_message)
+
+
+    def on_open(self, ws):
+        logger.info("Binance connection opened")
+
+    def on_close(self, ws):
+        logger.warning("Binance connection closed")
+
+    def on_error(self, ws, msg):
+        logger.warning("Binance connection error : %s", msg)
+
+    def on_message(self, ws, msg):
+        print(msg)
+

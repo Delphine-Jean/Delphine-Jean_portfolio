@@ -36,3 +36,53 @@
 2021-04-18 21:59:14,886 INFO :: message for basic informations
 2021-04-18 21:59:14,886 WARNING :: message to pay attention
 2021-04-18 21:59:14,886 ERROR :: message helps to debug an error
+2021-04-19 21:28:01,473 INFO :: message for basic informations
+2021-04-19 21:28:01,473 WARNING :: message to pay attention
+2021-04-19 21:28:01,473 ERROR :: message helps to debug an error
+2021-04-19 21:30:51,300 INFO :: message for basic informations
+2021-04-19 21:30:51,300 WARNING :: message to pay attention
+2021-04-19 21:30:51,300 ERROR :: message helps to debug an error
+2021-04-19 21:30:51,300 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:30:51,668 ERROR :: Error while making GET request to /fapi/v1/account: {'code': -2014, 'msg': 'API-key format invalid.'} (error code 401)
+2021-04-19 21:35:02,809 INFO :: message for basic informations
+2021-04-19 21:35:02,809 WARNING :: message to pay attention
+2021-04-19 21:35:02,809 ERROR :: message helps to debug an error
+2021-04-19 21:35:02,809 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:35:03,562 ERROR :: Error while making GET request to /fapi/v1/account: {'code': -1102, 'msg': "Mandatory parameter 'timestamp' was not sent, was empty/null, or malformed."} (error code 400)
+2021-04-19 21:36:00,250 INFO :: message for basic informations
+2021-04-19 21:36:00,250 WARNING :: message to pay attention
+2021-04-19 21:36:00,250 ERROR :: message helps to debug an error
+2021-04-19 21:36:00,250 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:38:19,895 INFO :: message for basic informations
+2021-04-19 21:38:19,903 WARNING :: message to pay attention
+2021-04-19 21:38:19,903 ERROR :: message helps to debug an error
+2021-04-19 21:38:19,903 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:38:49,671 INFO :: message for basic informations
+2021-04-19 21:38:49,671 WARNING :: message to pay attention
+2021-04-19 21:38:49,671 ERROR :: message helps to debug an error
+2021-04-19 21:38:49,671 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:40:34,165 INFO :: message for basic informations
+2021-04-19 21:40:34,165 WARNING :: message to pay attention
+2021-04-19 21:40:34,165 ERROR :: message helps to debug an error
+2021-04-19 21:40:34,165 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:51:13,051 INFO :: message for basic informations
+2021-04-19 21:51:13,051 WARNING :: message to pay attention
+2021-04-19 21:51:13,052 ERROR :: message helps to debug an error
+2021-04-19 21:51:13,052 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:55:15,756 INFO :: message for basic informations
+2021-04-19 21:55:15,756 WARNING :: message to pay attention
+2021-04-19 21:55:15,756 ERROR :: message helps to debug an error
+2021-04-19 21:55:15,756 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:56:32,732 INFO :: message for basic informations
+2021-04-19 21:56:32,732 WARNING :: message to pay attention
+2021-04-19 21:56:32,732 ERROR :: message helps to debug an error
+2021-04-19 21:56:32,732 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:57:17,263 INFO :: message for basic informations
+2021-04-19 21:57:17,263 WARNING :: message to pay attention
+2021-04-19 21:57:17,263 ERROR :: message helps to debug an error
+2021-04-19 21:57:17,263 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:58:04,783 INFO :: message for basic informations
+2021-04-19 21:58:04,783 WARNING :: message to pay attention
+2021-04-19 21:58:04,783 ERROR :: message helps to debug an error
+2021-04-19 21:58:04,783 INFO :: Binance Futures Client successfully initialized
+2021-04-19 21:58:06,247 ERROR :: Error while making DELETE request to /fapi/v1/order: {'code': -2011, 'msg': 'Unknown order sent.'} (error code 400)

@@ -25,8 +25,11 @@ logger.error("message helps to debug an error")
 
 if __name__ == '__main__':
 
-    binance = BinanceClientFutures(True)
-    print(binance.get_historical_candles("BTCUSDT", "1h"))
+    binance = BinanceClientFutures("7e450864b2670cc314f74dc9ee61597ca90bf33359cbf25a68d80e44b322ebe7",
+                                   "7d91ab540e9aa25007cb7c2cf7b861c36eebb81850d7ccb9fa029890c4adad2c",
+                                   True)
+    print(binance.get_order_status("BTCUSDT", 2686399724))
+    print(binance.cancel_order("BTCUSDT",2686399724))
     root = tk.Tk()
     root.mainloop()
 
