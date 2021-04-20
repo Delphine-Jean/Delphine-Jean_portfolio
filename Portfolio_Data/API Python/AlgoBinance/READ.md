@@ -1,6 +1,3 @@
-API Key
-7e450864b2670cc314f74dc9ee61597ca90bf33359cbf25a68d80e44b322ebe7
-API Secret
-7d91ab540e9aa25007cb7c2cf7b861c36eebb81850d7ccb9fa029890c4adad2c
+Création d'un trading bot avec l'API et websocket Binance et Bitmex surle marché des Futures
 
 https://binance-docs.github.io/apidocs/futures/en/ 
