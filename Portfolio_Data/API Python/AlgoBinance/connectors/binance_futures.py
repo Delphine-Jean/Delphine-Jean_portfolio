@@ -14,16 +14,18 @@ import ssl
 
 import json
 
+from models import Balance
+
 logger = logging.getLogger()
 
 class BinanceClientFutures:
     def __init__(self, public_key, secret_key, testnet : bool):
         if testnet:
             self.base_url = "https://testnet.binancefuture.com"
-            self.wss_url = "wss://stream.binancefuture.com"
+            self.wss_url = "wss://stream.binancefuture.com/ws"
         else:
             self.base_url = "https://fapi.binance.com"
-            self.wss_url = "wss://fstream.binance.com"
+            self.wss_url = "wss://fstream.binance.com/ws"
 
         self.prices = {}
         self.public_key = public_key
@@ -107,7 +109,8 @@ class BinanceClientFutures:
 
         if account_data is not None:
             for a in account_data['assets']:
-                balances[a['asset']] = a
+                balances[a['asset']] = Balance(a)
+
         return balances
 
 
@@ -154,7 +157,7 @@ class BinanceClientFutures:
         return order_status
 
     def start_ws(self):
-        self.ws = websocket.WebSocketApp(self.wss_url, on_open=self.on_open,on_close=self.on_close,on_error=self.on_error, on_message = self.on_message)
+        self.ws = websocket.WebSocketApp(self.wss_url, on_open=self.on_open,on_close=self.on_close,on_error=self.on_error,on_message=self.on_message)
 
         self.ws.run_forever(sslopt={"cert_reqs" : ssl.CERT_NONE})
 
@@ -179,12 +182,12 @@ class BinanceClientFutures:
                 symbol = data["s"]
 
                 if symbol not in self.prices:
-                    self.prices[symbol] = {"bid": float(ob_data["b"]), "ask": float(ob_data["a"])}
+                    self.prices[symbol] = {"bid": float(data["b"]), "ask": float(data["a"])}
                 else:
-                    self.prices[symbol]["bid"] = float(ob_data["b"])
-                    self.prices[symbol]["ask"] = float(ob_data["a"])
+                    self.prices[symbol]["bid"] = float(data["b"])
+                    self.prices[symbol]["ask"] = float(data["a"])
 
-
+                print(self.prices[symbol])
 
     def subscribe_channel(self, symbol):
         data = dict()
