@@ -231,3 +231,8 @@
 2021-04-21 22:37:05,623 ERROR :: error from callback <bound method BinanceClientFutures.on_open of <connectors.binance_futures.BinanceClientFutures object at 0x00000173DFE210A0>>: Invalid OPCODE
 2021-04-21 22:37:05,683 INFO :: Binance connection opened
 2021-04-21 22:37:05,684 ERROR :: error from callback <bound method BinanceClientFutures.on_open of <connectors.binance_futures.BinanceClientFutures object at 0x00000173DFE210A0>>: Invalid OPCODE
+2021-04-23 23:59:09,389 INFO :: message for basic informations
+2021-04-23 23:59:09,389 WARNING :: message to pay attention
+2021-04-23 23:59:09,389 ERROR :: message helps to debug an error
+2021-04-23 23:59:11,061 INFO :: Binance Futures Client successfully initialized
+2021-04-23 23:59:12,389 INFO :: Binance connection opened
