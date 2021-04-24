@@ -1,9 +1,10 @@
-import tkinter as tk
+from flask import Flask, request, render_template
 import logging
 from connectors.binance_futures import BinanceClientFutures
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
+
 
 stream_handler = logging.StreamHandler()
 formatter = logging.Formatter("%(asctime)s %(levelname)s :: %(message)s")
@@ -22,14 +23,19 @@ logger.info("message for basic informations")
 logger.warning("message to pay attention")
 logger.error("message helps to debug an error")
 
-if __name__ == '__main__':
+app = Flask(__name__)
 
-    binance = BinanceClientFutures("XXXXXX",
-                                   "XXXXXX",
-                                   True)
-    print(binance.get_contracts())
-    root = tk.Tk()
-    root.mainloop()
+@app.route('/')
+def test():
+    return "hello world"
+    #binance = BinanceClientFutures("7e450864b2670cc314f74dc9ee61597ca90bf33359cbf25a68d80e44b322ebe7",
+                                   #"7d91ab540e9aa25007cb7c2cf7b861c36eebb81850d7ccb9fa029890c4adad2c",
+                                   #True)
+    #print(binance.prices)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 
 
 

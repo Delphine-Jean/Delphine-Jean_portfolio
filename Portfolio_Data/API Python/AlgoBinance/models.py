@@ -7,7 +7,7 @@ class Balance:
         self.wallet_balance = float(info['walletBalance'])
         self.unrealized_pnl = float(info['unrealizedProfit'])
 
-class Candles:
+class Candle:
     def __init__(self,candle_info):
         self.timestamp = float(candle_info[0])
         self.open = float(candle_info[1])

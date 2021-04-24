@@ -19,10 +19,8 @@ class BinanceClientFutures:
     def __init__(self, public_key: str, secret_key: str, testnet : bool):
         if testnet:
             self._base_url = "https://testnet.binancefuture.com"
-            self._wss_url = "wss://stream.binancefuture.com/ws"
         else:
             self._base_url = "https://fapi.binance.com"
-            self._wss_url = "wss://fstream.binance.com/ws"
 
         self._public_key = public_key
         self._secret_key = secret_key
@@ -32,8 +30,7 @@ class BinanceClientFutures:
         self.prices = dict()
         self._ws_id = 1
         self._ws = None
-        t = threading.Thread(target=self._start_ws)
-        t.start()
+
         logger.info("Binance Futures Client successfully initialized")
 
     def _generate_signature(self, data: typing.Dict) -> str:
@@ -79,7 +76,7 @@ class BinanceClientFutures:
                 contracts[contract_data["pair"]] = Contract(contract_data)
         return contracts
 
-    def get_historical_candles(self, contract: Contract, interval: str) -> typing.List[Candles]:
+    def get_historical_candles(self, contract: Contract, interval: str) -> typing.List[Candle]:
         data = dict()
         data["symbol"] = contract.symbol
         data["interval"] = interval
@@ -90,7 +87,7 @@ class BinanceClientFutures:
         candles = []
         if raw_candles is not None:
             for c in raw_candles:
-                candles.append(Candles(c))
+                candles.append(Candle(c))
 
         return candles
 
@@ -175,56 +172,3 @@ class BinanceClientFutures:
 
         return order_status
 
-    def _start_ws(self):
-        self.ws = websocket.WebSocketApp(self._wss_url, on_open=self._on_open,on_close=self._on_close,on_error=self._on_error,on_message=self._on_message)
-        while True:
-            try:
-                self.ws.run_forever(sslopt={"cert_reqs" : ssl.CERT_NONE})
-            except Exception as e:
-                logger.error("Binance error in run forever() method : %s", e)
-            time.sleep(2)
-
-
-    def _on_open(self, ws):
-        logger.info("Binance connection opened")
-
-        self.subscribe_channel(list(self.contracts.values()), "bookTicker")
-
-    def _on_close(self, ws):
-        logger.warning("Binance connection closed")
-
-    def _on_error(self,ws, msg: str):
-        logger.warning("Binance connection error : %s", msg)
-
-    def _on_message(self,ws, msg: str):
-        print(msg)
-
-        data = json.loads(msg)
-        if "e" in data:
-            if data["e"] == "bookTicker":
-                symbol = data["s"]
-
-                if symbol not in self.prices:
-                    self.prices[symbol] = {"bid": float(data["b"]), "ask": float(data["a"])}
-                else:
-                    self.prices[symbol]["bid"] = float(data["b"])
-                    self.prices[symbol]["ask"] = float(data["a"])
-
-                print(self.prices[symbol])
-
-    def subscribe_channel(self, contracts: typing.List[Contract], channel: str):
-        data = dict()
-        data["method"] = "SUBSCRIBE"
-        data['params'] = []
-
-        for contract in contracts:
-            data['params'].append(contract.symbol.lower() + "@" + channel)
-        data["id"] = self._ws_id
-
-        print(data, type(data))
-        try:
-            self.ws.send(json.dumps(data))
-        except Exception as e:
-            logger.error("Websocket error while subscription to %s: %s", contract.symbol,e)
-
-        self._ws_id += 1
