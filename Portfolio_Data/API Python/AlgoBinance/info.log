@@ -309,3 +309,285 @@
 2021-04-24 13:04:55,457 WARNING ::  * Debugger is active!
 2021-04-24 13:04:55,457 INFO ::  * Debugger PIN: 840-608-161
 2021-04-24 13:04:55,473 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:24:53,746 INFO :: message for basic informations
+2021-04-24 13:24:53,746 WARNING :: message to pay attention
+2021-04-24 13:24:53,746 ERROR :: message helps to debug an error
+2021-04-24 13:24:53,763 INFO ::  * Restarting with stat
+2021-04-24 13:24:54,098 INFO :: message for basic informations
+2021-04-24 13:24:54,098 WARNING :: message to pay attention
+2021-04-24 13:24:54,098 ERROR :: message helps to debug an error
+2021-04-24 13:24:54,106 WARNING ::  * Debugger is active!
+2021-04-24 13:24:54,122 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:24:54,138 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:25:00,623 INFO :: Binance Futures Client successfully initialized
+2021-04-24 13:25:00,623 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:00] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-24 13:25:01,543 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-24 13:25:46,374 INFO :: message for basic informations
+2021-04-24 13:25:46,374 WARNING :: message to pay attention
+2021-04-24 13:25:46,374 ERROR :: message helps to debug an error
+2021-04-24 13:25:46,414 INFO ::  * Restarting with stat
+2021-04-24 13:25:46,878 INFO :: message for basic informations
+2021-04-24 13:25:46,878 WARNING :: message to pay attention
+2021-04-24 13:25:46,878 ERROR :: message helps to debug an error
+2021-04-24 13:25:46,886 WARNING ::  * Debugger is active!
+2021-04-24 13:25:46,894 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:25:46,910 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:25:52,054 INFO :: Binance Futures Client successfully initialized
+2021-04-24 13:25:52,062 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:52] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 13:25:53,534 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:53] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 13:25:53,534 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:53] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 13:25:53,534 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:53] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 13:25:53,734 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:53] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:25:53,742 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:53] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 13:25:53,878 INFO :: 127.0.0.1 - - [24/Apr/2021 13:25:53] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:26:51,886 INFO :: message for basic informations
+2021-04-24 13:26:51,886 WARNING :: message to pay attention
+2021-04-24 13:26:51,886 ERROR :: message helps to debug an error
+2021-04-24 13:26:51,894 INFO ::  * Restarting with stat
+2021-04-24 13:26:52,270 INFO :: message for basic informations
+2021-04-24 13:26:52,270 WARNING :: message to pay attention
+2021-04-24 13:26:52,270 ERROR :: message helps to debug an error
+2021-04-24 13:26:52,278 WARNING ::  * Debugger is active!
+2021-04-24 13:26:52,286 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:26:52,294 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:26:55,734 INFO :: Binance Futures Client successfully initialized
+2021-04-24 13:26:56,470 INFO :: 127.0.0.1 - - [24/Apr/2021 13:26:56] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 13:26:57,942 INFO :: 127.0.0.1 - - [24/Apr/2021 13:26:57] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 13:26:57,942 INFO :: 127.0.0.1 - - [24/Apr/2021 13:26:57] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 13:26:57,950 INFO :: 127.0.0.1 - - [24/Apr/2021 13:26:57] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 13:26:58,102 INFO :: 127.0.0.1 - - [24/Apr/2021 13:26:58] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:26:58,110 INFO :: 127.0.0.1 - - [24/Apr/2021 13:26:58] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 13:26:58,406 INFO :: 127.0.0.1 - - [24/Apr/2021 13:26:58] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:31:15,303 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\connectors\\binance_futures.py', reloading
+2021-04-24 13:31:15,343 INFO ::  * Restarting with stat
+2021-04-24 13:31:15,663 INFO :: message for basic informations
+2021-04-24 13:31:15,663 WARNING :: message to pay attention
+2021-04-24 13:31:15,663 ERROR :: message helps to debug an error
+2021-04-24 13:31:15,671 WARNING ::  * Debugger is active!
+2021-04-24 13:31:15,679 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:31:15,695 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:32:25,924 INFO :: message for basic informations
+2021-04-24 13:32:25,924 WARNING :: message to pay attention
+2021-04-24 13:32:25,924 ERROR :: message helps to debug an error
+2021-04-24 13:32:25,932 INFO ::  * Restarting with stat
+2021-04-24 13:32:26,268 INFO :: message for basic informations
+2021-04-24 13:32:26,268 WARNING :: message to pay attention
+2021-04-24 13:32:26,268 ERROR :: message helps to debug an error
+2021-04-24 13:32:26,284 WARNING ::  * Debugger is active!
+2021-04-24 13:32:26,292 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:32:26,300 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:32:32,028 INFO :: 127.0.0.1 - - [24/Apr/2021 13:32:32] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 13:32:33,428 INFO :: 127.0.0.1 - - [24/Apr/2021 13:32:33] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 13:32:33,436 INFO :: 127.0.0.1 - - [24/Apr/2021 13:32:33] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 13:32:33,436 INFO :: 127.0.0.1 - - [24/Apr/2021 13:32:33] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 13:32:33,604 INFO :: 127.0.0.1 - - [24/Apr/2021 13:32:33] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 13:32:33,628 INFO :: 127.0.0.1 - - [24/Apr/2021 13:32:33] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:35:35,244 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\connectors\\binance_futures.py', reloading
+2021-04-24 13:35:35,284 INFO ::  * Restarting with stat
+2021-04-24 13:35:35,660 INFO :: message for basic informations
+2021-04-24 13:35:35,660 WARNING :: message to pay attention
+2021-04-24 13:35:35,660 ERROR :: message helps to debug an error
+2021-04-24 13:35:35,668 WARNING ::  * Debugger is active!
+2021-04-24 13:35:35,676 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:35:35,692 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:36:19,937 INFO :: message for basic informations
+2021-04-24 13:36:19,937 WARNING :: message to pay attention
+2021-04-24 13:36:19,937 ERROR :: message helps to debug an error
+2021-04-24 13:36:19,953 INFO ::  * Restarting with stat
+2021-04-24 13:36:20,289 INFO :: message for basic informations
+2021-04-24 13:36:20,289 WARNING :: message to pay attention
+2021-04-24 13:36:20,289 ERROR :: message helps to debug an error
+2021-04-24 13:36:20,297 WARNING ::  * Debugger is active!
+2021-04-24 13:36:20,305 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:36:20,313 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:36:28,158 INFO :: 127.0.0.1 - - [24/Apr/2021 13:36:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 13:36:29,606 INFO :: 127.0.0.1 - - [24/Apr/2021 13:36:29] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 13:36:29,606 INFO :: 127.0.0.1 - - [24/Apr/2021 13:36:29] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 13:36:29,614 INFO :: 127.0.0.1 - - [24/Apr/2021 13:36:29] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 13:36:29,710 INFO :: 127.0.0.1 - - [24/Apr/2021 13:36:29] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:36:29,734 INFO :: 127.0.0.1 - - [24/Apr/2021 13:36:29] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 13:36:29,862 INFO :: 127.0.0.1 - - [24/Apr/2021 13:36:29] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:38:57,453 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\connectors\\binance_futures.py', reloading
+2021-04-24 13:38:57,484 INFO ::  * Restarting with stat
+2021-04-24 13:38:57,817 INFO :: message for basic informations
+2021-04-24 13:38:57,817 WARNING :: message to pay attention
+2021-04-24 13:38:57,817 ERROR :: message helps to debug an error
+2021-04-24 13:38:57,825 WARNING ::  * Debugger is active!
+2021-04-24 13:38:57,833 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:38:57,841 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:39:58,190 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\connectors\\binance_futures.py', reloading
+2021-04-24 13:39:58,222 INFO ::  * Restarting with stat
+2021-04-24 13:39:58,534 INFO :: message for basic informations
+2021-04-24 13:39:58,534 WARNING :: message to pay attention
+2021-04-24 13:39:58,534 ERROR :: message helps to debug an error
+2021-04-24 13:39:58,542 WARNING ::  * Debugger is active!
+2021-04-24 13:39:58,550 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:39:58,558 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:41:36,050 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\connectors\\binance_futures.py', reloading
+2021-04-24 13:41:36,082 INFO ::  * Restarting with stat
+2021-04-24 13:41:36,418 INFO :: message for basic informations
+2021-04-24 13:41:36,418 WARNING :: message to pay attention
+2021-04-24 13:41:36,418 ERROR :: message helps to debug an error
+2021-04-24 13:41:36,426 WARNING ::  * Debugger is active!
+2021-04-24 13:41:36,434 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:41:36,450 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:42:29,990 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\models.py', reloading
+2021-04-24 13:42:30,062 INFO ::  * Restarting with stat
+2021-04-24 13:42:30,422 INFO :: message for basic informations
+2021-04-24 13:42:30,422 WARNING :: message to pay attention
+2021-04-24 13:42:30,422 ERROR :: message helps to debug an error
+2021-04-24 13:42:30,438 WARNING ::  * Debugger is active!
+2021-04-24 13:42:30,438 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:42:30,454 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:44:41,159 INFO :: message for basic informations
+2021-04-24 13:44:41,159 WARNING :: message to pay attention
+2021-04-24 13:44:41,159 ERROR :: message helps to debug an error
+2021-04-24 13:44:41,174 INFO ::  * Restarting with stat
+2021-04-24 13:44:41,487 INFO :: message for basic informations
+2021-04-24 13:44:41,487 WARNING :: message to pay attention
+2021-04-24 13:44:41,487 ERROR :: message helps to debug an error
+2021-04-24 13:44:41,503 WARNING ::  * Debugger is active!
+2021-04-24 13:44:41,503 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:44:41,518 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:44:51,421 INFO :: Binance Futures Client successfully initialized
+2021-04-24 13:44:52,181 INFO :: 127.0.0.1 - - [24/Apr/2021 13:44:52] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 13:44:53,573 INFO :: 127.0.0.1 - - [24/Apr/2021 13:44:53] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 13:44:53,573 INFO :: 127.0.0.1 - - [24/Apr/2021 13:44:53] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 13:44:53,589 INFO :: 127.0.0.1 - - [24/Apr/2021 13:44:53] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 13:44:53,725 INFO :: 127.0.0.1 - - [24/Apr/2021 13:44:53] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 13:44:53,773 INFO :: 127.0.0.1 - - [24/Apr/2021 13:44:53] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:46:38,735 INFO :: message for basic informations
+2021-04-24 13:46:38,735 WARNING :: message to pay attention
+2021-04-24 13:46:38,735 ERROR :: message helps to debug an error
+2021-04-24 13:46:38,743 INFO ::  * Restarting with stat
+2021-04-24 13:46:39,103 INFO :: message for basic informations
+2021-04-24 13:46:39,103 WARNING :: message to pay attention
+2021-04-24 13:46:39,103 ERROR :: message helps to debug an error
+2021-04-24 13:46:39,111 WARNING ::  * Debugger is active!
+2021-04-24 13:46:39,119 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:46:39,127 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:46:42,983 INFO :: Binance Futures Client successfully initialized
+2021-04-24 13:46:43,718 INFO :: 127.0.0.1 - - [24/Apr/2021 13:46:43] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 13:46:45,671 INFO :: 127.0.0.1 - - [24/Apr/2021 13:46:45] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 13:46:45,687 INFO :: 127.0.0.1 - - [24/Apr/2021 13:46:45] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 13:46:45,687 INFO :: 127.0.0.1 - - [24/Apr/2021 13:46:45] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 13:46:46,071 INFO :: 127.0.0.1 - - [24/Apr/2021 13:46:46] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:46:46,103 INFO :: 127.0.0.1 - - [24/Apr/2021 13:46:46] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 13:50:15,835 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\connectors\\binance_futures.py', reloading
+2021-04-24 13:50:15,875 INFO ::  * Restarting with stat
+2021-04-24 13:53:19,489 INFO :: message for basic informations
+2021-04-24 13:53:19,490 WARNING :: message to pay attention
+2021-04-24 13:53:19,490 ERROR :: message helps to debug an error
+2021-04-24 13:53:19,541 INFO ::  * Restarting with stat
+2021-04-24 13:53:21,094 INFO :: message for basic informations
+2021-04-24 13:53:21,094 WARNING :: message to pay attention
+2021-04-24 13:53:21,094 ERROR :: message helps to debug an error
+2021-04-24 13:53:21,141 WARNING ::  * Debugger is active!
+2021-04-24 13:53:21,188 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:53:21,236 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 13:53:31,694 INFO :: Binance Futures Client successfully initialized
+2021-04-24 13:53:32,516 INFO :: 127.0.0.1 - - [24/Apr/2021 13:53:32] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 13:53:32,858 INFO :: Binance connection opened
+2021-04-24 13:53:37,886 INFO :: 127.0.0.1 - - [24/Apr/2021 13:53:37] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 13:53:37,917 INFO :: 127.0.0.1 - - [24/Apr/2021 13:53:37] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 13:53:37,958 INFO :: 127.0.0.1 - - [24/Apr/2021 13:53:37] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 13:53:38,667 INFO :: 127.0.0.1 - - [24/Apr/2021 13:53:38] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-24 13:53:38,669 INFO :: 127.0.0.1 - - [24/Apr/2021 13:53:38] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 13:59:57,458 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\app.py', reloading
+2021-04-24 13:59:57,637 INFO ::  * Restarting with stat
+2021-04-24 13:59:59,531 INFO :: message for basic informations
+2021-04-24 13:59:59,532 WARNING :: message to pay attention
+2021-04-24 13:59:59,532 ERROR :: message helps to debug an error
+2021-04-24 13:59:59,581 WARNING ::  * Debugger is active!
+2021-04-24 13:59:59,621 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 13:59:59,717 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 14:05:18,785 INFO :: message for basic informations
+2021-04-24 14:05:18,786 WARNING :: message to pay attention
+2021-04-24 14:05:18,786 ERROR :: message helps to debug an error
+2021-04-24 14:05:18,836 INFO ::  * Restarting with stat
+2021-04-24 14:05:20,287 INFO :: message for basic informations
+2021-04-24 14:05:20,288 WARNING :: message to pay attention
+2021-04-24 14:05:20,288 ERROR :: message helps to debug an error
+2021-04-24 14:05:20,330 WARNING ::  * Debugger is active!
+2021-04-24 14:05:20,363 INFO ::  * Debugger PIN: 840-608-161
+2021-04-24 14:05:20,406 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-24 14:05:24,882 INFO :: Binance Futures Client successfully initialized
+2021-04-24 14:05:24,926 INFO :: 127.0.0.1 - - [24/Apr/2021 14:05:24] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-24 14:05:30,618 INFO :: 127.0.0.1 - - [24/Apr/2021 14:05:30] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-24 14:05:30,622 INFO :: 127.0.0.1 - - [24/Apr/2021 14:05:30] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-24 14:05:30,624 INFO :: 127.0.0.1 - - [24/Apr/2021 14:05:30] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-24 14:05:31,161 INFO :: 127.0.0.1 - - [24/Apr/2021 14:05:31] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-24 14:05:31,421 INFO :: 127.0.0.1 - - [24/Apr/2021 14:05:31] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-26 21:57:44,648 INFO ::  * Detected change in 'C:\\Users\\delph\\PycharmProjects\\AlgoBinance\\connectors\\binance_futures.py', reloading
+2021-04-26 21:57:45,096 INFO ::  * Restarting with stat
+2021-04-26 22:23:48,990 INFO :: message for basic informations
+2021-04-26 22:23:48,991 WARNING :: message to pay attention
+2021-04-26 22:23:48,991 ERROR :: message helps to debug an error
+2021-04-26 22:23:49,057 INFO ::  * Restarting with stat
+2021-04-26 22:23:51,462 INFO :: message for basic informations
+2021-04-26 22:23:51,463 WARNING :: message to pay attention
+2021-04-26 22:23:51,463 ERROR :: message helps to debug an error
+2021-04-26 22:23:51,504 WARNING ::  * Debugger is active!
+2021-04-26 22:23:51,541 INFO ::  * Debugger PIN: 840-608-161
+2021-04-26 22:23:51,594 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-26 22:24:03,402 INFO :: 127.0.0.1 - - [26/Apr/2021 22:24:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-26 22:24:10,895 INFO :: 127.0.0.1 - - [26/Apr/2021 22:24:10] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-26 22:24:11,106 INFO :: 127.0.0.1 - - [26/Apr/2021 22:24:11] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-26 22:24:11,135 INFO :: 127.0.0.1 - - [26/Apr/2021 22:24:11] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-26 22:24:12,106 INFO :: 127.0.0.1 - - [26/Apr/2021 22:24:12] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-26 22:24:12,594 INFO :: 127.0.0.1 - - [26/Apr/2021 22:24:12] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-26 22:28:33,103 INFO :: message for basic informations
+2021-04-26 22:28:33,104 WARNING :: message to pay attention
+2021-04-26 22:28:33,104 ERROR :: message helps to debug an error
+2021-04-26 22:28:33,149 INFO ::  * Restarting with stat
+2021-04-26 22:28:36,302 INFO :: message for basic informations
+2021-04-26 22:28:36,302 WARNING :: message to pay attention
+2021-04-26 22:28:36,303 ERROR :: message helps to debug an error
+2021-04-26 22:28:36,349 WARNING ::  * Debugger is active!
+2021-04-26 22:28:36,380 INFO ::  * Debugger PIN: 840-608-161
+2021-04-26 22:28:36,399 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-26 22:29:07,647 INFO :: message for basic informations
+2021-04-26 22:29:07,648 WARNING :: message to pay attention
+2021-04-26 22:29:07,648 ERROR :: message helps to debug an error
+2021-04-26 22:29:07,692 INFO ::  * Restarting with stat
+2021-04-26 22:29:11,110 INFO :: message for basic informations
+2021-04-26 22:29:11,111 WARNING :: message to pay attention
+2021-04-26 22:29:11,111 ERROR :: message helps to debug an error
+2021-04-26 22:29:11,150 WARNING ::  * Debugger is active!
+2021-04-26 22:29:11,180 INFO ::  * Debugger PIN: 840-608-161
+2021-04-26 22:29:11,199 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-26 22:29:36,879 INFO :: 127.0.0.1 - - [26/Apr/2021 22:29:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-26 22:29:43,556 INFO :: 127.0.0.1 - - [26/Apr/2021 22:29:43] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-26 22:29:43,557 INFO :: 127.0.0.1 - - [26/Apr/2021 22:29:43] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-26 22:29:43,618 INFO :: 127.0.0.1 - - [26/Apr/2021 22:29:43] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-26 22:29:44,426 INFO :: 127.0.0.1 - - [26/Apr/2021 22:29:44] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-26 22:29:50,036 INFO :: 127.0.0.1 - - [26/Apr/2021 22:29:50] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-26 22:30:59,152 INFO :: message for basic informations
+2021-04-26 22:30:59,153 WARNING :: message to pay attention
+2021-04-26 22:30:59,153 ERROR :: message helps to debug an error
+2021-04-26 22:34:17,405 INFO :: message for basic informations
+2021-04-26 22:34:17,405 WARNING :: message to pay attention
+2021-04-26 22:34:17,405 ERROR :: message helps to debug an error
+2021-04-26 22:34:17,437 INFO ::  * Restarting with stat
+2021-04-26 22:34:20,985 INFO :: message for basic informations
+2021-04-26 22:34:20,985 WARNING :: message to pay attention
+2021-04-26 22:34:20,985 ERROR :: message helps to debug an error
+2021-04-26 22:34:21,044 WARNING ::  * Debugger is active!
+2021-04-26 22:34:21,080 INFO ::  * Debugger PIN: 840-608-161
+2021-04-26 22:34:21,096 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-26 22:34:29,615 INFO :: 127.0.0.1 - - [26/Apr/2021 22:34:29] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-26 22:34:35,356 INFO :: 127.0.0.1 - - [26/Apr/2021 22:34:35] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-26 22:34:35,380 INFO :: 127.0.0.1 - - [26/Apr/2021 22:34:35] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-26 22:34:35,397 INFO :: 127.0.0.1 - - [26/Apr/2021 22:34:35] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-26 23:33:32,404 INFO :: message for basic informations
+2021-04-26 23:33:32,405 WARNING :: message to pay attention
+2021-04-26 23:33:32,405 ERROR :: message helps to debug an error
+2021-04-26 23:33:32,463 INFO ::  * Restarting with stat
+2021-04-26 23:33:34,889 INFO :: message for basic informations
+2021-04-26 23:33:34,890 WARNING :: message to pay attention
+2021-04-26 23:33:34,890 ERROR :: message helps to debug an error
+2021-04-26 23:33:34,932 WARNING ::  * Debugger is active!
+2021-04-26 23:33:34,967 INFO ::  * Debugger PIN: 840-608-161
+2021-04-26 23:33:35,015 INFO ::  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-26 23:33:41,758 INFO :: 127.0.0.1 - - [26/Apr/2021 23:33:41] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-26 23:33:45,968 INFO :: 127.0.0.1 - - [26/Apr/2021 23:33:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
