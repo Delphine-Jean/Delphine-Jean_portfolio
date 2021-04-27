@@ -1,6 +1,10 @@
-API Key
-7e450864b2670cc314f74dc9ee61597ca90bf33359cbf25a68d80e44b322ebe7
-API Secret
-7d91ab540e9aa25007cb7c2cf7b861c36eebb81850d7ccb9fa029890c4adad2c
 
-https://binance-docs.github.io/apidocs/futures/en/ 
+1. Calling the API Binance In Python
+
+2. Setting Up A PostgreSQL Database
+
+3. Introduction To Airflow
+
+4. An Example ETL Pipeline With Airflow
+
+5. Debugging Airflow Code

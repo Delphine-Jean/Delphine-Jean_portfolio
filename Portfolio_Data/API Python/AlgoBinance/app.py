@@ -1,6 +1,9 @@
-from flask import Flask, request, render_template
+from flask import Flask
 import logging
-from connectors.binance_client import BinancesClient
+import os
+from connectors import binance_client
+
+
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -23,11 +26,16 @@ logger.info("message for basic informations")
 logger.warning("message to pay attention")
 logger.error("message helps to debug an error")
 
-app = Flask(__name__)
+def connection():
+    api_secret_binance = os.getenv('api_secret')
+    api_key_binance = os.getenv('api_key')
+    binance = binance_client.BinancesClient(api_key_binance, api_secret_binance)
+    historical_data = binance.get_historical_klines()
+    market_depth = binance.get_market_depth()
+    historical_trades = binance.get_historical_trades()
+    return market_depth
 
-@app.route('/')
-def test():
-    return "hello world"
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    print(connection())
