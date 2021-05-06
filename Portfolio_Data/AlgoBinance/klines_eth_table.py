@@ -20,3 +20,25 @@ def make_databsae():
     conn = psycopg2.connect(database = dbname, user = username)
 
     curr = conn.cursor()
+
+    create_table = """ CREATE TABLE IF NOT EXIST %s (
+    Open time DATE,
+    Open      DATE,     
+    High      INT,
+    Low       INT,
+    Close     INT,
+    Volume    INT,
+    Close time DATE,
+    Quote ass # Number of trades INT,
+    Taker buy base asset volume INT,
+    Taker buy quote asset volume INT,
+    Can be ignored INTEGER
+    )
+    """ %tablename
+
+    curr.execute(create_table)
+    conn.commit()
+    conn.close()
+
+if __name__ == "__main__":
+        make_databsae()
