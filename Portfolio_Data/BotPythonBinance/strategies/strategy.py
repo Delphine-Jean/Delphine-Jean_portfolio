@@ -1,18 +1,19 @@
-imoprt json
 import threading
 import time
 from datetime import datetime
+from abc import abstractmethod, ABC
+
 from decouple import config
-import models.price
 
-"""
-Abstract layer strategy constructor
-"""
-class Strategy(object):
-    price : Price
+from models.order import Order
+from models.price import Price
 
-    def __init__(self, exchange, interval=60, *args, **kwargs):
+class Strategy(ABC):
+    TRADING_MODE_TEST = 'test'
+    TRADING_MODE_REAL = 'real'
 
+    def __init__(self, exchange, interval=60, *args,**kwargs):
+        self.exchange = exchange
         self._timer = None
         self.interval = interval
         self.args = args
@@ -20,13 +21,17 @@ class Strategy(object):
         self.is_running = False
         self.next_call = time.time()
         self.portfolio = {}
-        self.exchange = exchange
-        self.get_portfolio()
+        self.test = bool(config('TRADING_MODE') != self.TRADING_MODE_REAL)
 
     def _run(self):
         self.is_running = False
         self.start()
-        self.run(*self.args, **self.kwargs)
+        self.set_price(self.exchange.symbol_ticker())
+        self.run()
+
+    @abstractmethod
+    def run(self):
+        pass
 
     def start(self):
         if not self.is_running:
@@ -36,20 +41,54 @@ class Strategy(object):
             else:
                 self.next_call += self.interval
 
-                self._timer = threading.Timer(self.next_call - time.time())
-                self._timer.start()
-                self.is_running = True
+            self._timer = threading.Timer(self.next_call - time.time(), self._run())
+
+            self._timer.start()
+            self.is_running = True
 
     def stop(self):
         self._timer.cancel()
-        self.is_running = True
+        self.is_running = False
 
     def get_portfolio(self):
-        self.portfolio = {'currency': self.exchange.get_asset_balance(self.exchange.currency),
-                          'asset': self.exchange.get_asset_balance(self.exchange.asset)}
+        self.portfolio = {'currency' : self.exchange.get_asset_balance(self.exchange.currency),
+                          'asset' : self.exchange.get_asset_balance(self.exchange.asset)}
 
     def get_price(self):
-        try:
-            self.price = self.exchange.symbol_ticker()
-        except Exception as e:
-            pass
+        return self.price
+
+    def set_price(self, price: Price):
+        self.price = price
+
+    def buy(self, **kwargs):
+        order = Order(
+            currency=self.exchange.currency,
+            asset=self.exchange.asset,
+            symbol=self.exchange.get_symbol(),
+            type=Order.TYPE_LIMIT,
+            side=Order.BUY,
+            test=self.test,
+            **kwargs
+        )
+        self.order(order)
+    def sell(self, **kwargs):
+        order = Order(
+            currency=self.exchange.currency,
+            asset=self.exchange.asset,
+            symbol=self.exchange.get_symbol(),
+            type=Order.TYPE_LIMIT,
+            side=Order.SELL,
+            test=self.test,
+            **kwargs
+        )
+        self.order(order)
+
+
+    def order(self, order: Order):
+        print(order)
+        if self.test:
+            exchange_order = self.exchange.test_order(order)
+        else:
+            exchange_order = self.exchange.order(order)
+
+        print(exchange_order)
