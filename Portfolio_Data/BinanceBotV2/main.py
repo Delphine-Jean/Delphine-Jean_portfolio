@@ -1,6 +1,8 @@
 import logging
 import config
 from binance_client import BinanceClient
+from binance.client import Client
+from binance.enums import *
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -24,12 +26,24 @@ file_handler.setLevel(logging.DEBUG)
 
 if __name__ == '__main__':
 
+
     client = BinanceClient(
         api_key= config.API_KEY,
         secret_api=config.API_SECRET,
         testnet = True)
-    print(client.get_all_symbol_ticker("BTCUSDT"))
+    interval = Client.KLINE_INTERVAL_1MINUTE
 
+
+    """print(client.create_order(
+        symbol='BNBBTC',
+        side=SIDE_BUY,
+        type=ORDER_TYPE_LIMIT,
+        timeInForce=TIME_IN_FORCE_GTC,
+        quantity =100,
+        price='0.00001'
+    ))"""
+
+    print(client.get_all_symbol_ticker())
 
 
 

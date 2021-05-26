@@ -16,18 +16,44 @@ class BinanceClient:
         return self.client
 
 
-    def get_all_symbol_ticker(self, symbol):
+    def get_all_symbol_ticker(self, symbol=None):
         self.symbol = symbol
         prices = self.client.get_all_tickers(self.symbol)
-        return prices
+        if prices is not None:
+            for price in prices:
+                print(price)
 
-    def get_symbol_historical_ticker_candles(self):
-        pass
+    def get_symbol_historical_ticker_candles(self, symbol: str, interval, start_str : str, end_str=None):
+        self.symbol = symbol
+        self.interval = interval
+        self.start_str = start_str
+        self.end_str = end_str
+
+        data = self.client.get_historical_klines(self.symbol,self.interval ,self.start_str, self.end_str )
+
+        if data is not None:
+            for datas in data:
+                print(datas)
 
 
 
-    def create_order(self):
-        pass
+    def create_order(self, symbol,side,type,timeInForce, quantity, price):
+        self.symbol = symbol
+        self.side = side
+        self.type = type
+        self.timeInForce = timeInForce
+        self.quantity = quantity
+        self.price = price
+
+        order = self.client.create_test_order(self.symbol,
+            self.side,
+            self.type,
+            self.timeInForce,
+            self.quantity,
+            self.price)
+
+        for orders in order:
+            print(order)
 
     def get_order(self):
         pass
