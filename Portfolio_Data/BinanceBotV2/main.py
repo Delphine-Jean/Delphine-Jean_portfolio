@@ -26,24 +26,13 @@ file_handler.setLevel(logging.DEBUG)
 
 if __name__ == '__main__':
 
-
     client = BinanceClient(
         api_key= config.API_KEY,
-        secret_api=config.API_SECRET,
-        testnet = True)
-    interval = Client.KLINE_INTERVAL_1MINUTE
+        secret_api=config.API_SECRET)
+
+    print(client.create_order_test(symbol='ETHUSDT', side=SIDE_BUY, type=ORDER_TYPE_MARKET, quantity=100))
 
 
-    """print(client.create_order(
-        symbol='BNBBTC',
-        side=SIDE_BUY,
-        type=ORDER_TYPE_LIMIT,
-        timeInForce=TIME_IN_FORCE_GTC,
-        quantity =100,
-        price='0.00001'
-    ))"""
-
-    print(client.get_all_symbol_ticker())
 
 
 

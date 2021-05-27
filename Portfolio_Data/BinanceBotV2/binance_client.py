@@ -1,15 +1,15 @@
 from binance.client import Client
 from binance.enums import *
 from binance.exceptions import *
+from binance.exceptions import BinanceAPIException, BinanceOrderException
 
 
 
 class BinanceClient:
-    def __init__(self, api_key : str, secret_api : str, testnet : bool):
+    def __init__(self, api_key : str, secret_api : str):
         self.api_key = api_key
         self.secret_api = secret_api
-        self.testnet = testnet
-        self.client = Client(self.api_key, self.secret_api, testnet=self.testnet)
+        self.client = Client(self.api_key, self.secret_api)
 
 
     def get_client(self):
@@ -35,9 +35,22 @@ class BinanceClient:
             for datas in data:
                 print(datas)
 
+    def create_order_test(self, symbol, side, type, quantity):
+        self.symbol = symbol
+        self.side = side
+        self.type = type
+        self.quantity = quantity
+
+        test_order = self.client.create_test_order(symbol=self.symbol,
+                                      side=self.side,
+                                      type=self.type,
+                                      quantity= self.quantity)
+
+        for order in test_order:
+            print(order)
 
 
-    def create_order(self, symbol,side,type,timeInForce, quantity, price):
+    def create_order(self, symbol, side, type, timeInForce,quantity, price):
         self.symbol = symbol
         self.side = side
         self.type = type
@@ -45,14 +58,14 @@ class BinanceClient:
         self.quantity = quantity
         self.price = price
 
-        order = self.client.create_test_order(self.symbol,
-            self.side,
-            self.type,
-            self.timeInForce,
-            self.quantity,
-            self.price)
+        test_order = self.client.create_test_order(symbol=self.symbol,
+                                      side=self.side,
+                                      type=self.type,
+                                      timeInForce=self.timeInForce,
+                                      quantity= self.quantity,
+                                      price= self.price)
 
-        for orders in order:
+        for order in test_order:
             print(order)
 
     def get_order(self):
