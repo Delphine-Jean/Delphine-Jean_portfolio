@@ -1,8 +1,7 @@
 import logging
+import tkinter as tk
+from connectors.binance_futures import BinanceFuturesClient
 import config
-from binance_client import BinanceClient
-from binance.client import Client
-from binance.enums import *
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -23,14 +22,15 @@ file_handler = logging.FileHandler('info.log')
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 
+if __name__ != '__main__':
+    pass
+else:
+    binance = BinanceFuturesClient(config.API_KEY,
+                                   config.API_SECRET, True)
+    print(binance.get_balances())
+    root = tk.Tk()
+    root.mainloop()
 
-if __name__ == '__main__':
-
-    client = BinanceClient(
-        api_key= config.API_KEY,
-        secret_api=config.API_SECRET)
-
-    print(client.create_order_test(symbol='ETHUSDT', side=SIDE_BUY, type=ORDER_TYPE_MARKET, quantity=100))
 
 
 

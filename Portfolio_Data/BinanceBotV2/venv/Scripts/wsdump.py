@@ -1,4 +1,6 @@
-#!c:\users\delph\pycharmprojects\binancebotv2\venv\scripts\python.exe
+"""
+
+"""
 
 """
 websocket - WebSocket client library for Python
@@ -29,7 +31,9 @@ import time
 import ssl
 import gzip
 import zlib
-from urllib.parse import urlparse
+
+import six
+from six.moves.urllib.parse import urlparse
 
 import websocket
 
@@ -96,11 +100,14 @@ def parse_args():
 class RawInput:
 
     def raw_input(self, prompt):
-        line = input(prompt)
+        if six.PY3:
+            line = input(prompt)
+        else:
+            line = raw_input(prompt)
 
-        if ENCODING and ENCODING != "utf-8" and not isinstance(line, str):
+        if ENCODING and ENCODING != "utf-8" and not isinstance(line, six.text_type):
             line = line.decode(ENCODING).encode("utf-8")
-        elif isinstance(line, str):
+        elif isinstance(line, six.text_type):
             line = line.encode("utf-8")
 
         return line
@@ -178,9 +185,9 @@ def main():
         while True:
             opcode, data = recv()
             msg = None
-            if opcode == websocket.ABNF.OPCODE_TEXT and isinstance(data, bytes):
+            if six.PY3 and opcode == websocket.ABNF.OPCODE_TEXT and isinstance(data, bytes):
                 data = str(data, "utf-8")
-            if isinstance(data, bytes) and len(data) > 2 and data[:2] == b'\037\213':  # gzip magick
+            if isinstance(data, bytes) and len(data)>2 and data[:2] == b'\037\213':  # gzip magick
                 try:
                     data = "[gzip] " + str(gzip.decompress(data), "utf-8")
                 except:
