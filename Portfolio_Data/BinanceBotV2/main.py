@@ -1,6 +1,5 @@
 import logging
-import tkinter as tk
-from connectors.binance_futures import BinanceFuturesClient
+from binance import BinanceAPI
 import config
 
 logger = logging.getLogger()
@@ -25,11 +24,10 @@ file_handler.setLevel(logging.DEBUG)
 if __name__ != '__main__':
     pass
 else:
-    binance = BinanceFuturesClient(config.API_KEY,
-                                   config.API_SECRET, True)
-    print(binance.get_balances())
-    root = tk.Tk()
-    root.mainloop()
+    binances = BinanceAPI(config.API_KEY,config.API_SECRET)
+    print(binances.get_exchange_info())
+
+
 
 
 
