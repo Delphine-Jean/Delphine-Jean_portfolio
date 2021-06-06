@@ -3,6 +3,8 @@ import hashlib
 import requests
 import hmac
 import config
+import time
+from datetime import datetime, timedelta
 
 try:
     from urllib import urlencode
@@ -15,6 +17,7 @@ class BinanceAPI:
     BASE_URL = "https://www.binance.com/api/v1"
     BASE_URL_V3 = "https://api.binance.com/api/v3"
     PUBLIC_URL = "https://www.binance.com/exchange/public/product"
+    API_TESTNET_URL = 'https://testnet.binance.vision/api'
 
     def __init__(self, key, secret):
         self.key = key
@@ -35,6 +38,15 @@ class BinanceAPI:
         return self._get_no_sign(path, params)
 
     def get_klines(self, market, interval, startTime, endTime):
+
+        if startTime is not None:
+            startTime = datetime.strptime(startTime, "%d/%m/%Y %H:%M:%S")
+            startTime = int(startTime.timestamp() * 1000)
+
+        if endTime is not None:
+            endTime = datetime.strptime(endTime, "%d/%m/%Y %H:%M:%S")
+            endTime = int(endTime.timestamp() * 1000)
+
         path = "%s/klines" % self.BASE_URL_V3
         params = {"symbol": market, "interval": interval, "startTime": startTime, "endTime": endTime}
         return self._get_no_sign(path, params)

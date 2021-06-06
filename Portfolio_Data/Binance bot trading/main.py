@@ -1,6 +1,8 @@
 import logging
 from binance import BinanceAPI
 import config
+import time
+from datetime import datetime, timedelta
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -25,7 +27,18 @@ if __name__ != '__main__':
     pass
 else:
     binances = BinanceAPI(config.API_KEY,config.API_SECRET)
-    print(binances.get_exchange_info())
+
+
+    response = binances.get_klines("BTCUSDT", "1m", startTime="01/01/2019 00:00:00", endTime="01/01/2021 00:00:00")
+
+    data = []
+
+    for klines in response:
+        data.append(klines)
+        print(data)
+
+
+
 
 
 
