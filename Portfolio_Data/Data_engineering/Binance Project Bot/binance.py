@@ -86,6 +86,13 @@ class BinanceAPI:
         params = {"symbol": market, "limit": limit}
         return self._get(path, params)
 
+
+    def buy_order_test(self, market, side, type, quantity):
+        path = "%s/test" %self.BASE_URL_V3
+        params = {"symbol": market, "side": side, "type": type, "quantity":quantity}
+        return self._get(path, params)
+
+
     def buy_limit(self, market, quantity, rate):
         path = "%s/order" % self.BASE_URL_V3
         params = self._order(market, quantity, "BUY", rate)

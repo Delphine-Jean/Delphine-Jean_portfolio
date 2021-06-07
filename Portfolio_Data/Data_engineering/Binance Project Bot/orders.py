@@ -39,17 +39,29 @@ class Orders:
 
         return order['status']
 
-    def get_order_book(self):
-        pass
+    def get_order_book(self, symbol, limit):
 
-    def get_order(self):
-        pass
+        order = client.get_order_books(symbol,limit)
 
-    def get_order_status(self):
-        pass
+        return order
 
-    def get_ticker(self):
-        pass
+    def get_order(self, symbol, orderId):
+        order = client.query_order(symbol, orderId)
+
+        if order is not None:
+            return order
+
+    def get_order_status(self, symbol, orderId):
+        order = client.query_order(symbol, orderId)
+
+        if order is not None:
+            return order["status"]
+
+    def get_ticker(self, symbol):
+        ticker = client.get_ticker(symbol)
+        return ticker
+
 
     def get_info(self):
-        pass
+        info = client.get_exchange_info()
+        print(info)
