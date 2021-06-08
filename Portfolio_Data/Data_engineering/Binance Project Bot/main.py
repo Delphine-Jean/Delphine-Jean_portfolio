@@ -30,7 +30,7 @@ else:
     binances = BinanceAPI(config.API_KEY,config.API_SECRET)
 
 
-    response = binances.get_klines("BTCUSDT", "1m", startTime="01/01/2019 00:00:00", endTime="01/01/2021 00:00:00")
+    response = binances.get_klines("BTCUSDT", "1h", startTime="01/01/2019 00:00:00", endTime="01/01/2021 00:00:00")
 
     print(response)
 
