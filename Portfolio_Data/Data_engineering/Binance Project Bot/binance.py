@@ -39,13 +39,11 @@ class BinanceAPI:
 
     def get_klines(self, market, interval, startTime, endTime):
 
-        if startTime is not None:
-            startTime = datetime.strptime(startTime, "%d/%m/%Y %H:%M:%S")
-            startTime = int(startTime.timestamp() * 1000)
+        startTime = datetime.strptime(startTime, "%d/%m/%Y %H:%M:%S")
+        startTime = int(startTime.timestamp() * 1000)
 
-        if endTime is not None:
-            endTime = datetime.strptime(endTime, "%d/%m/%Y %H:%M:%S")
-            endTime = int(endTime.timestamp() * 1000)
+        endTime = datetime.strptime(endTime, "%d/%m/%Y %H:%M:%S")
+        endTime = int(endTime.timestamp() * 1000)
 
         path = "%s/klines" % self.BASE_URL_V3
         params = {"symbol": market, "interval": interval, "startTime": startTime, "endTime": endTime}

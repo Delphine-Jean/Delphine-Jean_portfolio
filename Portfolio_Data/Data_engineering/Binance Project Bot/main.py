@@ -27,19 +27,13 @@ file_handler.setLevel(logging.DEBUG)
 if __name__ != '__main__':
     pass
 else:
-    """ binances = BinanceAPI(config.API_KEY,config.API_SECRET)
+    binances = BinanceAPI(config.API_KEY,config.API_SECRET)
 
 
     response = binances.get_klines("BTCUSDT", "1m", startTime="01/01/2019 00:00:00", endTime="01/01/2021 00:00:00")
 
-    data = []
+    print(response)
 
-    for klines in response:
-        data.append(klines)
-        print(data) """
-    response =Orders()
-
-    print(response.get_info())
 
 
 
