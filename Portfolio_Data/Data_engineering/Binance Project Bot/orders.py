@@ -1,5 +1,5 @@
 import config
-from binance import BinanceAPI
+from binance_client import BinanceAPI
 
 client = BinanceAPI(config.API_KEY, config.API_SECRET)
 
