@@ -4,3 +4,4 @@ websocket
 google-cloud=0.34.0
 google-cloud-bigquery
 python-binance
+pandas
