@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from binance.client import Client
 import datetime as dt
 import pandas as pd
+from bigquery_export_klines import BigqueryClient
 
 
 import json
@@ -69,6 +70,11 @@ else:
         print(data)
 
     get_klines()
+
+    output = BigqueryClient()
+    print(output)
+
+
 
 
 
