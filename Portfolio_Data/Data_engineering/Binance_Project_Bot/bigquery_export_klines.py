@@ -14,6 +14,7 @@ class BigqueryClient:
         self.dataset_id = "{}.project_crypto_etl".format(self.project)
 
 
+    #datasets methods
     def check_dataset(self):
 
         if self.datasets:
@@ -38,3 +39,23 @@ class BigqueryClient:
         self.dataset_id = "{}.{}".format(self.project, self.current_dataset_id)
         self.client.delete_dataset(self.dataset_id,delete_contents=True,not_found_ok=True)
         print("Dataset deleted{}".format(self.current_dataset_id))
+
+    # tables methods
+
+    def get_table(self):
+        pass
+
+
+    def create_table(self):
+        pass
+
+
+    def delete_table(self):
+        pass
+
+
+    def load_json_from_gcs(self):
+        pass
+
+    def update_table(self):
+        pass

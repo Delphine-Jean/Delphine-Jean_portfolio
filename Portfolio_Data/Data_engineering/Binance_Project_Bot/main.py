@@ -73,7 +73,7 @@ else:
     get_klines()
 
     client = BigqueryClient()
-    print(client.delete_dataset("test"))
+    print(client.create_dataset("test"))
 
 
 
