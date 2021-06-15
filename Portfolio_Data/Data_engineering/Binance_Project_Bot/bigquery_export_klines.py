@@ -3,26 +3,38 @@ from google.oauth2 import service_account
 import config
 import json
 
+
 class BigqueryClient:
-    client = bigquery.Client()
-    filename = 'export.json'
-    dataset_id = 'project_crypto_etl'
-    table_id = 'historical_klines_2019_2020_BTC'
 
-    dataset_ref = client.get_dataset(dataset_id)
-    table_ref =client.get_table(table_id)
-    job_config = bigquery.LoadJobConfig()
-    job_config.source_format = bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
-    job_config.autodetect = True
+    def __init__(self):
+        self.client = bigquery.Client()
+        self.project = self.client.project
+        self.datasets = list(self.client.list_datasets())
+        self.project = self.client.project
+        self.dataset_id = "{}.project_crypto_etl".format(self.project)
 
-    with open(filename, "rb") as source_file:
-        job = client.load_table_from_file(
-                source_file,
-                table_ref,
-                location = 'europe',
-                job_config=job_config
-            )
 
-    job.result()
+    def check_dataset(self):
 
-    print("Loaded {} rows into {}:{}".format(job.output_rows, dataset_id, table_id))
+        if self.datasets:
+            print('Dataset in project {}'.format(self.project))
+            for data in self.datasets:
+                print('\t{}'.format(data.dataset_id))
+        else:
+            print('{} project does not contain any datasets'.format(self.project))
+
+    def create_dataset(self, new_dataset: str):
+        self.new_data_set = new_dataset
+        self.dataset_id = "{}.{}".format(self.project, self.new_data_set)
+
+        self.dataset = bigquery.Dataset(self.dataset_id)
+        self.dataset.location = "EU"
+
+        self.dataset = self.client.create_dataset(self.dataset, timeout=30)  # Make an API request.
+        print("Created dataset {}.{}".format(self.client.project, self.dataset.dataset_id))
+
+    def delete_dataset(self, current_dataset_id: str):
+        self.current_dataset_id = current_dataset_id
+        self.dataset_id = "{}.{}".format(self.project, self.current_dataset_id)
+        self.client.delete_dataset(self.dataset_id,delete_contents=True,not_found_ok=True)
+        print("Dataset deleted{}".format(self.current_dataset_id))

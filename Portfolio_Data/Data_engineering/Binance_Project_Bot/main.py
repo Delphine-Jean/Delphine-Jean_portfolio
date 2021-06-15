@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from binance.client import Client
 import datetime as dt
 import pandas as pd
-#from bigquery_export_klines import BigqueryClient
+from bigquery_export_klines import BigqueryClient
 from google.cloud import bigquery
 
 
@@ -72,17 +72,10 @@ else:
 
     get_klines()
 
-    client = bigquery.Client()
+    client = BigqueryClient()
+    print(client.delete_dataset("test"))
 
-    datasets = list(client.list_datasets())
-    project = client.project
 
-    if datasets:
-        print('Dataset in project {}'.format(project))
-        for dataset in datasets:
-            print('\t{}'.format(dataset.dataset_id))
-    else:
-        print('{} project does not contain any datasets'.format(project))
 
 
 
