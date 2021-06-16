@@ -11,7 +11,7 @@ class BigqueryClient:
         self.project = self.client.project
         self.datasets = list(self.client.list_datasets())
         self.project = self.client.project
-        self.dataset_id = "{}.project_crypto_etl".format(self.project)
+        self.dataset_id = None
 
 
     #datasets methods
@@ -42,11 +42,31 @@ class BigqueryClient:
 
     # tables methods
 
+
+    def create_table(self, new_table: str, dataset:str):
+        self.dataset = dataset
+        self.new_table = new_table
+        self.table_id = "{}.{}.{}".format(self.project, self.dataset, self.new_table)
+
+        self.schema = [
+            bigquery.SchemaField("open_time", "INTEGER"),
+            bigquery.SchemaField("open", "FLOAT"),
+            bigquery.SchemaField("high", "FLOAT"),
+            bigquery.SchemaField("low", "FLOAT"),
+            bigquery.SchemaField("close", "FLOAT"),
+            bigquery.SchemaField("volume", "FLOAT"),
+            bigquery.SchemaField("close_time", "INTEGER"),
+            bigquery.SchemaField("quote_assets_volume", "FLOAT"),
+            bigquery.SchemaField("number_trades", "INTEGER"),
+            bigquery.SchemaField("taker_buy_base_asset_volume", "FLOAT"),
+            bigquery.SchemaField("taker_buy_quote_asset_volume", "FLOAT"),
+            bigquery.SchemaField("ignore", "FLOAT"),
+        ]
+        self.table = bigquery.Table(self.table_id, schema=self.schema)
+        self.client.create_table(self.table_id, exists_ok=True, timeout=30)
+        print(" Created table {}.{}.{}".format(self.table.project, self.table.dataset_id, self.table.table_id))
+
     def get_table(self):
-        pass
-
-
-    def create_table(self):
         pass
 
 
