@@ -75,7 +75,7 @@ class BigqueryClient:
 
 
     def load_json_from_gcs(self):
-        pass
+        return test
 
     def update_table(self):
-        pass
+        return test
