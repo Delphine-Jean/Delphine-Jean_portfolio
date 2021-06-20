@@ -1,8 +1,0 @@
-pip install websocket-client==0.58.0
-requests
-websocket
-google-cloud=0.34.0
-google-cloud-bigquery
-python-binance
-pandas
-google
