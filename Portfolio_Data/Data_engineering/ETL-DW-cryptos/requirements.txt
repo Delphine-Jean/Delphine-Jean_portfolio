@@ -1,2 +1,5 @@
 pandas
 requests
+apache-airflow
+google-cloud
+pandas
