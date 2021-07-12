@@ -4,6 +4,10 @@ import pandas as pd
 from binance_client import BinanceAPI
 import config
 import os
+from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
+from airflow import DAG
+from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator
 
 
 
@@ -23,9 +27,24 @@ def get_klines():
                     'close_time', 'quote asset volume', 'num_trades',
                     'taker_base_vol', 'taker_quote_vol', 'ignore']
 
+    current_date = datetime.now()
+    current_date = current_date.strftime("%d-%m-%Y %H:%M:%S")
+    path = os.getcwd()
 
-    data.to_json('./dags/export.json', orient='index')
-    print(data)
+    #data.to_json('./dags/export.json', orient='index')
+    data.to_json("./files/export{}.json", orient='index').format(current_date)
+    #print(data)
 
 
 get_klines()
+print(os.getcwd())
+
+
+defaults_args = {
+    'owner': 'Delphine Jean',
+    'depends_on_past': False,
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 5,
+    'retry_delay': timedelta(minutes=5),
+}
