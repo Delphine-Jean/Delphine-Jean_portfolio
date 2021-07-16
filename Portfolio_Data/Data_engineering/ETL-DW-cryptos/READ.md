@@ -14,3 +14,4 @@ Nous allons utiliser Cloud Storage, Bigquery ainsi que Airlfow pour construire l
         - Créer un modèle d'apprentissage automatique pour l'analyse des sentiments
         - Analysez vos données Twitter à l'aide de votre modèle d'analyse des sentiments
         - Visualisez les résultats de votre analyse des sentiments Twitter  
+

@@ -8,6 +8,8 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 from airflow import DAG
 from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator
+from airflow.contrib.operators.gcs_operator import GoogleCloudStorageCreateBucketOperator
+import airflow
 
 
 
@@ -48,3 +50,23 @@ defaults_args = {
     'retries': 5,
     'retry_delay': timedelta(minutes=5),
 }
+
+with DAG(
+    dag_id='etl_bq',
+    default_args=defaults_args,
+    description='etl klines historicals to bigquery',
+    schedule_interval=timedelta(days=1)
+) as dag:
+
+
+     downloading_files = PythonOperator(
+        task_id='downloading_klines',
+        python_callable=get_klines
+    )
+
+     creating_bucket_gcs =  GoogleCloudStorageCreateBucketOperator(
+
+     )
+
+
+
