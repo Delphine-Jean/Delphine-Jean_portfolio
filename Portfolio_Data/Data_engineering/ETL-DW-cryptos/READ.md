@@ -6,6 +6,10 @@ J'ai choisi de cr√©er un projet de Blockchian Analytics afin de pouvoir mettre √
 Nous allons utiliser Cloud Storage, Bigquery ainsi que Airlfow pour construire le datawarehouse de notre projet.
 ##sources :
     - Binances cryptos : historiques prix symbol ADA, ETH,
+1. Extract data from data source
+1. Load the data into a file
+2. Drop the file into Cloud Storage
+3. Run a BigQuery Load Job on these files (load job is free)
     - Tweet sur les cryptos : ADA, ETH :
   
 #### Etapes sentiment analysis

@@ -1,17 +1,15 @@
-from datetime import timedelta, datetime
-import json
-import pandas as pd
-from binance_client import BinanceAPI
-import config
 import os
-from airflow.operators.python import PythonOperator
-from airflow.operators.bash import BashOperator
+from datetime import timedelta, datetime
+
+import pandas as pd
 from airflow import DAG
-from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator
+from airflow.operators.python import PythonOperator
 from airflow.contrib.operators.gcs_operator import GoogleCloudStorageCreateBucketOperator
-import airflow
+from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator
 
 
+import config
+from binance_client import BinanceAPI
 
 """
 Python function to export klines historical data from the file binance
@@ -64,9 +62,38 @@ with DAG(
         python_callable=get_klines
     )
 
-     creating_bucket_gcs =  GoogleCloudStorageCreateBucketOperator(
-
+     CreateBucket = GoogleCloudStorageCreateBucketOperator(
+         task_id="CreateNewBucket",
+         bucket_name="test-bucket",
+         storage_class="MULTI_REGIONAL",
+         location="EU",
+         labels={"env": "dev", "team": "airflow"},
      )
+
+     CreateTable = BigQueryCreateEmptyTableOperator(
+         task_id='BigQueryCreateEmptyTableOperator_task',
+         dataset_id='ODS',
+         table_id='Employees',
+         project_id='internal-gcp-project',
+         schema_fields=[{"name": "emp_name", "type": "STRING", "mode": "REQUIRED"},
+                        {"name": "salary", "type": "INTEGER", "mode": "NULLABLE"}],
+         bigquery_conn_id='airflow-conn-id-account',
+         google_cloud_storage_conn_id='airflow-conn-id'
+     )
+
+     load_historical_klines_to_bq = GoogleCloudStorageToBigQueryOperator(
+         task_id='load_historical_klines',
+         bucket=gs_bucket,
+         source_objects=['cities/us-cities-demographics.csv'],
+         destination_project_dataset_table=f'{project_id}:{staging_dataset}.us_cities_demo',
+         schema_object='cities/us_cities_demo.json',
+         write_disposition='WRITE_TRUNCATE',
+         source_format='csv',
+         field_delimiter=';',
+         skip_leading_rows=1
+     )
+
+
 
 
 
