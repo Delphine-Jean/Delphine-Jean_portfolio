@@ -2,10 +2,10 @@ import os
 from datetime import timedelta, datetime
 
 import pandas as pd
-from airflow import DAG
+"""from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.contrib.operators.gcs_operator import GoogleCloudStorageCreateBucketOperator
-from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator
+from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator"""
 
 
 import config
@@ -28,19 +28,17 @@ def get_klines():
                     'taker_base_vol', 'taker_quote_vol', 'ignore']
 
     current_date = datetime.now()
-    current_date = current_date.strftime("%d-%m-%Y %H:%M:%S")
+    current_date = current_date.strftime("%d-%m-%Y-%Hh%Mmin%Ss")
     path = os.getcwd()
-
-    #data.to_json('./dags/export.json', orient='index')
-    data.to_json("./files/export{}.json", orient='index').format(current_date)
-    #print(data)
+    data.to_json(r'{}/files/export{}.json'.format(path, current_date), orient='index')
+    print(data)
 
 
 get_klines()
 print(os.getcwd())
 
 
-defaults_args = {
+"""defaults_args = {
     'owner': 'Delphine Jean',
     'depends_on_past': False,
     'email_on_failure': False,
@@ -91,7 +89,7 @@ with DAG(
          source_format='csv',
          field_delimiter=';',
          skip_leading_rows=1
-     )
+     )"""
 
 
 
