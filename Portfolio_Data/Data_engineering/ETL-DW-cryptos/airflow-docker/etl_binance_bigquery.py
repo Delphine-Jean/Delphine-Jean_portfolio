@@ -2,10 +2,10 @@ import os
 from datetime import timedelta, datetime
 
 import pandas as pd
-"""from airflow import DAG
+from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.contrib.operators.gcs_operator import GoogleCloudStorageCreateBucketOperator
-from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator"""
+from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator
 
 
 import config
@@ -37,8 +37,15 @@ def get_klines():
 get_klines()
 print(os.getcwd())
 
+"""
+Variables for google cloud authentification
+"""
+project_id = 'crypto_etl'
+staging_dataset = 'staging'
+prod_dataset = 'prod_env'
+gs_bucket = 'test-bucket'
 
-"""defaults_args = {
+defaults_args = {
     'owner': 'Delphine Jean',
     'depends_on_past': False,
     'email_on_failure': False,
@@ -54,27 +61,39 @@ with DAG(
     schedule_interval=timedelta(days=1)
 ) as dag:
 
-
-     downloading_files = PythonOperator(
+    downloading_files = PythonOperator(
         task_id='downloading_klines',
         python_callable=get_klines
     )
 
      CreateBucket = GoogleCloudStorageCreateBucketOperator(
          task_id="CreateNewBucket",
-         bucket_name="test-bucket",
+         bucket_name= gs_bucket,
          storage_class="MULTI_REGIONAL",
          location="EU",
          labels={"env": "dev", "team": "airflow"},
      )
 
+
+
      CreateTable = BigQueryCreateEmptyTableOperator(
          task_id='BigQueryCreateEmptyTableOperator_task',
-         dataset_id='ODS',
-         table_id='Employees',
-         project_id='internal-gcp-project',
-         schema_fields=[{"name": "emp_name", "type": "STRING", "mode": "REQUIRED"},
-                        {"name": "salary", "type": "INTEGER", "mode": "NULLABLE"}],
+         gcp_conn_id = 'google_cloud_default'
+         dataset_id= staging_dataset,
+         table_id='bitcoin_klines',
+         project_id= project_id,
+         schema_fields=[{"name": "open_time", "type": "INTEGER", "mode": "REQUIRED"},
+                        {"name": "open", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "high", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "low", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "close", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "volume", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "close_time", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "num_trades", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "taker_base_vol", "type": "INTEGER", "mode": "NULLABLE"},
+                        {"name": "taker_quote_vol", "type": "INTEGER", "mode": "NULLABLE"}
+                        {"name": "ignore", "type": "INTEGER", "mode": "NULLABLE"}],
+
          bigquery_conn_id='airflow-conn-id-account',
          google_cloud_storage_conn_id='airflow-conn-id'
      )
@@ -83,13 +102,11 @@ with DAG(
          task_id='load_historical_klines',
          bucket=gs_bucket,
          source_objects=['cities/us-cities-demographics.csv'],
-         destination_project_dataset_table=f'{project_id}:{staging_dataset}.us_cities_demo',
+         destination_project_dataset_table=f'{project_id}:{staging_dataset}.bitcoin_klines',
          schema_object='cities/us_cities_demo.json',
          write_disposition='WRITE_TRUNCATE',
-         source_format='csv',
-         field_delimiter=';',
-         skip_leading_rows=1
-     )"""
+         source_format='json',
+     )
 
 
 
